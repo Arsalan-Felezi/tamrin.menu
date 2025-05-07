@@ -1,0 +1,50 @@
+body{
+    background-image: url(./photo18540698062.jpg);
+}
+#input{
+    display: none;
+}
+.label{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 2;
+    position: relative;
+    }
+    
+    
+    .M {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        width: 800px;
+        height: 1080px;
+        object-fit: cover;
+        max-width: 70%;
+        text-align: center;
+        z-index: 3;
+    }
+    #input:checked ~ .M {
+        display: block;
+    }
+    .overlay{
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: transparent;
+        z-index: 1;
+    }
+    #input:checked ~ .overlay{
+        display: block;
+    }
+
+    
