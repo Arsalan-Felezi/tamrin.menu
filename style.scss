@@ -1,9 +1,12 @@
 body{
     background-image: url(./photo18540698062.jpg);
+    background-size: cover;
+    background-position: center;
 }
 #input{
     display: none;
 }
+
 .label{
     display: inline-block;
     padding: 10px 20px;
@@ -15,36 +18,53 @@ body{
     position: relative;
     }
     
-    
     .M {
-        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.7);
+        transition: all 0.8s ease;
         position: fixed;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
         background-color: rgba(255, 255, 255, 0.8);
-        padding: 30px;
+        padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-        width: 800px;
-        height: 1080px;
-        object-fit: cover;
-        max-width: 70%;
+        width: 30vw;
+        height: 75vh;
         text-align: center;
         z-index: 3;
+        pointer-events: none;
     }
+
+    .M img {
+        width: 100%;
+        height: 100%;
+        object-fit:contain;
+        border-radius: 10px;
+    }
+
     #input:checked ~ .M {
-        display: block;
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%,-50%) scale(1);
+        pointer-events: auto;
     }
+
     .overlay{
-        display: none;
+        display: block;
         position: fixed;
         inset: 0;
         background: transparent;
         z-index: 1;
+        transition: background 0.4s ease;
+        pointer-events: none;
     }
+
     #input:checked ~ .overlay{
-        display: block;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(8px);
+        pointer-events: auto;
     }
 
     

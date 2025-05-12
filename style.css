@@ -1,5 +1,7 @@
 body {
   background-image: url(./photo18540698062.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 #input {
@@ -18,39 +20,58 @@ body {
 }
 
 .M {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%) scale(0.7);
+          transform: translate(-50%, -50%) scale(0.7);
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
   position: fixed;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
   -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  width: 800px;
-  height: 1080px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  max-width: 70%;
+  width: 30vw;
+  height: 75vh;
   text-align: center;
   z-index: 3;
+  pointer-events: none;
+}
+
+.M img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 10px;
 }
 
 #input:checked ~ .M {
-  display: block;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
 }
 
 .overlay {
-  display: none;
+  display: block;
   position: fixed;
   inset: 0;
   background: transparent;
   z-index: 1;
+  -webkit-transition: background 0.4s ease;
+  transition: background 0.4s ease;
+  pointer-events: none;
 }
 
 #input:checked ~ .overlay {
-  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  pointer-events: auto;
 }
 /*# sourceMappingURL=style.css.map */
